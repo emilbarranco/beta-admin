@@ -1,4 +1,5 @@
 import 'package:beta_admin/constants/colors.dart';
+import 'package:beta_admin/widgets/lower_bar.dart';
 import 'package:beta_admin/widgets/skills_body.dart';
 import 'package:beta_admin/widgets/upper_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,6 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                //color: ColorConstants.primaryDashboardColor,
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
@@ -32,6 +32,17 @@ class MyApp extends StatelessWidget {
                 child: const UpperBar(),
               ),
               const SkillsBody(),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border(
+                    bottom: BorderSide(
+                        width: 3, color: ColorConstants.primaryDashboardColor),
+                  ),
+                ),
+                child: const LowerBar(),
+              ),
             ],
           ),
         ),
