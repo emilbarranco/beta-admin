@@ -28,13 +28,9 @@ class _UpperBarState extends State<UpperBar> {
                   Icons.arrow_drop_down,
                   color: Colors.white,
                 ),
-                elevation: 16,
+                elevation: 8,
                 style: TextStyle(color: ColorConstants.primaryDarkColor),
                 focusColor: ColorConstants.secondaryDashboardColor,
-                underline: Container(
-                  height: 2,
-                  color: ColorConstants.primaryDarkColor,
-                ),
                 onChanged: (String? value) {
                   setState(() {
                     dropdownValue = value!;
@@ -50,8 +46,10 @@ class _UpperBarState extends State<UpperBar> {
             ),
             ElevatedButton(
               style: ButtonStyle(
+                  foregroundColor:
+                      const MaterialStatePropertyAll<Color>(Colors.white),
                   backgroundColor: MaterialStatePropertyAll<Color>(
-                      ColorConstants.primaryDarkColor)),
+                      ColorConstants.primaryDashboardColor)),
               onPressed: () {},
               child: const Text('Submit'),
             ),

@@ -12,10 +12,20 @@ class SearchBar extends StatelessWidget {
         style: TextStyle(color: ColorConstants.primaryDarkColor),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorConstants.primaryDarkColor, width: 1),
+            borderSide:
+                BorderSide(color: ColorConstants.primaryDarkColor, width: 1),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(color: ColorConstants.primaryDarkColor, width: 1),
+          ),
+          isDense: true,
           fillColor: ColorConstants.primaryDarkColor,
-          prefixIcon: const Icon(Icons.search),
+          prefixIcon: Icon(
+            Icons.search,
+            color: ColorConstants.primaryDarkColor,
+          ),
+          labelStyle: TextStyle(color: ColorConstants.primaryDarkColor),
           labelText: 'Search',
         ),
       ),
