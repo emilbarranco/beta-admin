@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
+
 class SkillsBody extends StatefulWidget {
   const SkillsBody({super.key});
 
@@ -12,27 +14,34 @@ class _SkillsBodyState extends State<SkillsBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          color: Colors.white,
-          width: double.infinity,
-          child: PaginatedDataTable(
-            source: _data,
-            columns: const [
-              DataColumn(label: Text('ID')),
-              DataColumn(label: Text('Name')),
-              DataColumn(label: Text('Status')),
-              DataColumn(label: Text('Creation Date')),
-              DataColumn(label: Text('Category'))
-            ],
-            columnSpacing: 100,
-            horizontalMargin: 10,
-            rowsPerPage: 8,
-            showCheckboxColumn: false,
+    return SafeArea(
+      child: Column(
+        children: [
+          Container(
+            color: Colors.white,
+            width: double.infinity,
+            child: PaginatedDataTable(
+              source: _data,
+              header: const Text(
+                "Skills",
+                style: TextStyle(fontSize: 24.0),
+              ),
+              showFirstLastButtons: true,
+              showCheckboxColumn: true,
+              columnSpacing: 100,
+              horizontalMargin: 10,
+              rowsPerPage: 8,
+              columns: const [
+                DataColumn(label: Text('ID')),
+                DataColumn(label: Text('Name')),
+                DataColumn(label: Text('Status')),
+                DataColumn(label: Text('Creation Date')),
+                DataColumn(label: Text('Category')),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -151,6 +160,6 @@ class SkillsData extends DataTableSource {
       DataCell(Text(data[index]['Status'])),
       DataCell(Text(data[index]['Creation Date'])),
       DataCell(Text(data[index]['Category'])),
-    ]);
+    ], onSelectChanged: (value) {});
   }
 }

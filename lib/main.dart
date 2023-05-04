@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: ColorConstants.secondaryDashboardColor,
         body: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const EdgeInsets.fromLTRB(80, 32, 80, 32),
           child: Column(
             children: [
               Container(
