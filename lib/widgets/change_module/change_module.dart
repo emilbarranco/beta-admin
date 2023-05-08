@@ -11,6 +11,8 @@ class ChangeModule extends StatefulWidget {
 
 class _ChangeModuleState extends State<ChangeModule> {
   final _formKey = GlobalKey<FormState>();
+  bool publishedCheck = false;
+  bool hiddenCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -103,28 +105,48 @@ class _ChangeModuleState extends State<ChangeModule> {
                   ),
                   const SizedBox(height: 20.0),
                   Row(
-                    children: const [
-                      Padding(
+                    children: [
+                      const Padding(
                         padding: EdgeInsets.only(right: 10.0),
                         child: Text(
                           "Is published",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Checkbox(value: false, onChanged: null),
+                      Checkbox(
+                        checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.all(
+                            ColorConstants.primaryDashboardColor),
+                        value: publishedCheck,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            publishedCheck = value!;
+                          });
+                        },
+                      ),
                     ],
                   ),
                   const SizedBox(height: 20.0),
                   Row(
-                    children: const [
-                      Padding(
+                    children: [
+                      const Padding(
                         padding: EdgeInsets.only(right: 10.0),
                         child: Text(
-                          "Is published",
+                          "Hidden in filter",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Checkbox(value: false, onChanged: null),
+                      Checkbox(
+                        checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.all(
+                            ColorConstants.primaryDashboardColor),
+                        value: hiddenCheck,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hiddenCheck = value!;
+                          });
+                        },
+                      ),
                     ],
                   ),
                   const SizedBox(height: 20.0),
