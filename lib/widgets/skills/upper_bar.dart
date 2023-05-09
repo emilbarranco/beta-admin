@@ -1,5 +1,5 @@
 import 'package:beta_admin/constants/colors.dart';
-import 'package:beta_admin/widgets/search_skill.dart';
+import 'package:beta_admin/widgets/skills/search_skill.dart';
 import 'package:flutter/material.dart';
 
 const List<String> list = <String>['Approve', 'Reject', 'Unpublish', 'Delete'];
