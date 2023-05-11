@@ -1,7 +1,13 @@
 import 'package:beta_admin/constants/colors.dart';
-import 'package:beta_admin/widgets/lower_bar.dart';
-import 'package:beta_admin/widgets/skills_body.dart';
-import 'package:beta_admin/widgets/upper_bar.dart';
+import 'package:beta_admin/widgets/change_module/change_module.dart';
+import 'package:beta_admin/widgets/feature_options/add_feature_option.dart';
+import 'package:beta_admin/widgets/finance/payment_methods.dart';
+import 'package:beta_admin/widgets/finance/tiers.dart';
+import 'package:beta_admin/widgets/finance/user_finances.dart';
+import 'package:beta_admin/widgets/skills/lower_bar.dart';
+import 'package:beta_admin/widgets/skills/skills_body.dart';
+import 'package:beta_admin/widgets/skills/upper_bar.dart';
+import 'package:beta_admin/widgets/finance/suscriptions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,33 +23,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: ColorConstants.secondaryDashboardColor,
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(80, 32, 80, 32),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                        width: 3, color: ColorConstants.primaryDashboardColor),
-                  ),
-                ),
-                child: const UpperBar(),
-              ),
-              const SkillsBody(),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border(
-                    bottom: BorderSide(
-                        width: 3, color: ColorConstants.primaryDashboardColor),
-                  ),
-                ),
-                child: const LowerBar(),
-              ),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(80, 32, 80, 32),
+            child: Column(
+              children: const [
+                PaymentMethods(),
+              ],
+            ),
           ),
         ),
       ),
